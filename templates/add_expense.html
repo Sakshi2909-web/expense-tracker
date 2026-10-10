@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>➕ Add Expense</h1>
+
+    <form method="POST">
+
+        <label>Expense Title</label>
+        <input type="text" name="title" placeholder="e.g. Lunch" required>
+
+        <label>Amount</label>
+        <input type="number" name="amount" step="0.01" placeholder="e.g. 250" required>
+
+        <label>Category</label>
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Education">Education</option>
+            <option value="Bills">Bills</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" name="expense_date" required>
+
+        <label>Description</label>
+        <textarea name="description" placeholder="Enter description"></textarea>
+
+        <button type="submit">Add Expense</button>
+
+    </form>
+
+    <br>
+
+    <a href="{{ url_for('home') }}">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
